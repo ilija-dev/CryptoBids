@@ -3,7 +3,7 @@ import { BsArrowLeftShort } from "react-icons/bs";
 import SidebarElement from "./SidebarElement";
 import sportsData from "../../content/sports/index";
 
-const SidebarSection = () => {
+const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -11,13 +11,13 @@ const SidebarSection = () => {
       <div
         className={`bg-dark-purple h-screen p-5 pt-8 ${
           open ? "w-72" : "w-20"
-        } duration-300 relative`}
+        } duration-300 fixed`}
       >
         <BsArrowLeftShort
           className={`bg-white text-dark-purple text-3xl rounded-full absolute -right-3 top-9 border border-dark-purple cursor-pointer`}
           onClick={() => setOpen(!open)}
         />
-        <div className="flex items-center w-24 flex-wrap">
+        <div className="flex items-center w-1 flex-wrap">
           {sportsData.map((sport) => (
             <SidebarElement
               key={sport.id}
@@ -33,4 +33,4 @@ const SidebarSection = () => {
   );
 };
 
-export default SidebarSection;
+export default Sidebar;
