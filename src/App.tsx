@@ -1,11 +1,11 @@
-import { useState } from "react";
-import MainContent from "./components/Page/MainContent/MainContent";
 import PageLayout from "./components/layout/PageLayout";
+import { CategoryProvider } from "./state/context/CategoryContext";
 
 const App = () => {
-  const [selectedSport] = useState("all");
   return (
-    <PageLayout children={<MainContent selectedCategory={selectedSport} />} />
+    <CategoryProvider>
+    <PageLayout/>
+    </CategoryProvider>
   );
 };
 
